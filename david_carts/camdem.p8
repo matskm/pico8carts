@@ -3,7 +3,7 @@ version 16
 __lua__
 cls()
 
-circfill(20,20,10,2)
+circfill(20,20,10,3)
 
 camera(-60,0)
 
