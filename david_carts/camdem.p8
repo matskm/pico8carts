@@ -7,4 +7,4 @@ circfill(20,20,10,3)
 
 camera(-60,0)
 
-circfill(20,20,10,7)
+circfill(20,20,10,4)
