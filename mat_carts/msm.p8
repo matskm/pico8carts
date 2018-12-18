@@ -3,6 +3,7 @@ version 16
 __lua__
 --advanced micro platformer
 --@matthughson
+-- test comment msm 
 
 --if you make a game with this
 --starter kit, please consider
