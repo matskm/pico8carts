@@ -1,10 +1,23 @@
 pico-8 cartridge // http://www.pico-8.com
 version 16
 __lua__
+--puzzle
+
+
+v=0
+solid_flag=0
 cam_x=0
 cam_y=0
 
+
+
 function _update()
+
+ solid_flag = 0
+ if is_solid() then 
+  solid_flag = 1
+ end
+
  if (btn(0)and cam_x>0)cam_x-=1
  if (btn(1)and cam_x<895)cam_x+=1
  if (btn(2)and cam_y>0)cam_y-=1
@@ -20,9 +33,21 @@ function _draw()
  
  camera()
  print('('..cam_x..','..cam_y..')',0,0,7)
+ print('v='..v..')',0,10,7)
+ print('sf='..solid_flag..')',0,20,7)
  
  spr(p_sprite_num,63,63)
  
+end
+
+function is_solid()
+
+ mapx_pspr = cam_x+63
+ mapy_pspr = cam_y+63
+
+ v=mget(flr((mapx_pspr+4)/8),flr((mapy_pspr+8)/8))
+ return fget(v,0)
+
 end
 
 __gfx__
